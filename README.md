@@ -6,7 +6,7 @@ Complete a frontend implementation that allows a user to search for news article
 impressive tool that showcases your skills and knowledge of accessibility best-practices, measurability, and
 interactivity.
 
-Some of the requirements need you take assumptions for good UX behaviour, and sometimes provide questions for you to think around the functionality.
+Some of the requirements need you to make assumptions for good UX behavior, and sometimes provide questions for you to think through the functionality.
 
 
 ## Prerequisites
@@ -19,21 +19,21 @@ Some of the requirements need you take assumptions for good UX behaviour, and so
    - Allow the user to configure an API key through a JavaScript function exposed to dev tools console or page input rather than requiring a committed secret. Never commit a real API key.
    - Provide useful loading, empty, error, and rate-limit states.
 2. Include a text input field for searching articles by keyword
-   - Show recent searches in search suggestions when the search input is focussed.
+   - Show recent searches in search suggestions when the search input is focused.
    - Should you send the API request on every typed letter?
    - What happens when user refreshes the page when they are on search page?
    - How should the API behave when requests overlap, the network fails, NewsAPI rate-limits the client, or an older response arrives after a newer search?
 3. Display results with the article image, title, and description
    - Is simple loader better here or skeleton loading state is better?
 4. Display a Read More button linking to the full article.
-   - Show an interstitial popup warning the user that they are going to an external website if the URL is not matching the current host url. If they choose yes, then redirect them to the expected URL.
+   - Show an interstitial popup warning the user that they are going to an external website if the URL does not match the current host URL. If they choose yes, then redirect them to the expected URL.
    - We don't want to lose the ability to see the link, so don't avoid using the `a` tag.
    - How will the interstitial work, if user opens the link in new tab (by doing middle click or Right Click -> Open link in new tab)?
    - Is it better to implement an "Always remember" or "Trust this website" to reduce number of interstitial popups?
 5. Provide functionality for sorting results based on popularity, relevancy, publish date, or none.
    - What happens to sorting when user refreshes the page?
 6. Show a small clock that displays the correct current time even if local system clock is inaccurate.
-   - Use (time.now)[https://time.now/developer] API to sync deterministic time on the basis of user's timezone
+   - Use [time.now](https://time.now/developer) API to sync deterministic time based on the user's timezone.
    - What happens when the browser tab is not in focus for long time (like 30 min)?
 7. Add some unit tests for important behavior.
 
