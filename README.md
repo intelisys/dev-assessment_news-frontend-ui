@@ -6,7 +6,9 @@ Complete a frontend implementation that allows a user to search for news article
 impressive tool that showcases your skills and knowledge of accessibility best-practices, measurability, and
 interactivity.
 
-Some of the requirements need you take assumptions for good UX behaviour, and sometimes provide questions for you to think around the functionality.
+Some of the requirements require assumptions about good UX behavior. You submission will be graded on the best
+practices and standard UX decisions you make, as well as how those decisions shape the application architecture.
+Prioritize a maintainable, accessible, and reliable experience, and document important assumptions and trade-offs in your submission.
 
 
 ## Prerequisites
@@ -16,38 +18,32 @@ Some of the requirements need you take assumptions for good UX behaviour, and so
 
 ## Requirements
 1. Retrieve news data from [NewsAPI](https://newsapi.org/docs) using the API key you got above
-   - Allow the user to configure an API key through a JavaScript function exposed to dev tools console or page input rather than requiring a committed secret. Never commit a real API key.
-   - Provide useful loading, empty, error, and rate-limit states.
 2. Include a text input field for searching articles by keyword
    - Show recent searches in search suggestions when the search input is focussed.
-   - Should you send the API request on every typed letter?
-   - What happens when user refreshes the page when they are on search page?
-   - How should the API behave when requests overlap, the network fails, NewsAPI rate-limits the client, or an older response arrives after a newer search?
-3. Display results with the article image, title, and description
-   - Is simple loader better here or skeleton loading state is better?
+   - Use an appropriate strategy for request timing, URL state, overlapping requests, network failures, limits, and stale responses.
+3. Display results with the article image, title, and description.
 4. Display a Read More button linking to the full article.
    - Show an interstitial popup warning the user that they are going to an external website if the URL is not matching the current host url. If they choose yes, then redirect them to the expected URL.
-   - We don't want to lose the ability to see the link, so don't avoid using the `a` tag.
-   - How will the interstitial work, if user opens the link in new tab (by doing middle click or Right Click -> Open link in new tab)?
-   - Is it better to implement an "Always remember" or "Trust this website" to reduce number of interstitial popups?
+   - Preserve standard link behavior and accessibility, including the ability to open the link in a new tab.
+   - Consider an appropriate experience for repeated visits to a trusted external website.
 5. Provide functionality for sorting results based on popularity, relevancy, publish date, or none.
-   - What happens to sorting when user refreshes the page?
+   - Preserve the selected sort when the page is refreshed or shared where appropriate.
 6. Show a small clock that displays the correct current time even if local system clock is inaccurate.
-   - Use (time.now)[https://time.now/developer] API to sync deterministic time on the basis of user's timezone
-   - What happens when the browser tab is not in focus for long time (like 30 min)?
+   - Use the [time.now API](https://time.now/developer) to sync deterministic time based on the user's timezone.
+   - Keep the displayed time accurate when the browser tab is not in focus for an extended period.
 7. Add some unit tests for important behavior.
 
 ## Bonus Features
 You can choose to implement 1-2 features from this that you like:
 
 1. Use relative time for the article's published times, e.g. 3 min ago, Yesterday 2 PM.
-   - Where relative times work best for News articles (e.g. Last week vs Thursday 3PM).
-   - How will the values update if the page remains open for long durations (like a whole day) in background?
+   - Choose appropriate relative-time boundaries and keep values current while the page remains open.
 2. Give an option to the user to mark a news source as favourite.
    - If a favourite news source appears in search list, it should show before the news from other sources
 3. If user has visited the main article for a news item from the "Read more" link, it should show "Visited" tag for such news items
 
-Make sure you implement all the features' main problem statement. To address the questions asked in the requirements, you can implement the functionality if the time allows it, so prioritize the work and document any items you were not able to complete.
+Make sure you implement all the features in the main problem statement. Prioritize the work and document any items you
+were not able to complete, along with the UX and architecture decisions you made.
 
 ## Parameters
 
