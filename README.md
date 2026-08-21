@@ -19,11 +19,11 @@ Prioritize a maintainable, accessible, and reliable experience, and document imp
 ## Requirements
 1. Retrieve news data from [NewsAPI](https://newsapi.org/docs) using the API key you got above
 2. Include a text input field for searching articles by keyword
-   - Show recent searches in search suggestions when the search input is focussed.
+   - Show recent searches in search suggestions when the search input is focused.
    - Use an appropriate strategy for request timing, URL state, overlapping requests, network failures, limits, and stale responses.
 3. Display results with the article image, title, and description.
 4. Display a Read More button linking to the full article.
-   - Show an interstitial popup warning the user that they are going to an external website if the URL is not matching the current host url. If they choose yes, then redirect them to the expected URL.
+   - Show an interstitial popup warning the user that they are going to an external website if the URL does not match the current host URL. If they choose yes, then redirect them to the expected URL.
    - Preserve standard link behavior and accessibility, including the ability to open the link in a new tab.
    - Consider an appropriate experience for repeated visits to a trusted external website.
 5. Provide functionality for sorting results based on popularity, relevancy, publish date, or none.
