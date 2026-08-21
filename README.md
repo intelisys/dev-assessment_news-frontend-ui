@@ -6,23 +6,49 @@ Complete a frontend implementation that allows a user to search for news article
 impressive tool that showcases your skills and knowledge of accessibility best-practices, measurability, and
 interactivity.
 
+Some of the requirements require assumptions about good UX behavior. You submission will be graded on the best
+practices and standard UX decisions you make, as well as how those decisions shape the application architecture.
+Prioritize a maintainable, accessible, and reliable experience, and document important assumptions and trade-offs in your submission.
+
+
 ## Prerequisites
 
 - Register for a free [NewsAPI API Key](https://newsapi.org/register) for use as a data source within your project
   submission
 
 ## Requirements
+1. Retrieve news data from [NewsAPI](https://newsapi.org/docs) using the API key you got above
+2. Include a text input field for searching articles by keyword
+   - Show recent searches in search suggestions when the search input is focused.
+   - Use an appropriate strategy for request timing, URL state, overlapping requests, network failures, limits, and stale responses.
+3. Display results with the article image, title, and description.
+4. Display a Read More button linking to the full article.
+   - Show an interstitial popup warning the user that they are going to an external website if the URL does not match the current host URL. If they choose yes, then redirect them to the expected URL.
+   - Preserve standard link behavior and accessibility, including the ability to open the link in a new tab.
+   - Consider an appropriate experience for repeated visits to a trusted external website.
+5. Provide functionality for sorting results based on popularity, relevancy, publish date, or none.
+   - Preserve the selected sort when the page is refreshed or shared where appropriate.
+6. Show a small clock that displays the correct current time even if local system clock is inaccurate.
+   - Use the [time.now API](https://time.now/developer) to sync deterministic time based on the user's timezone.
+   - Keep the displayed time accurate when the browser tab is not in focus for an extended period.
+7. Add some unit tests for important behavior.
 
-1. Include a text input field for searching articles by keyword
-2. Display results with the article image, title, and description
-3. Display a Read More button linking to the full article
-4. Provide functionality for sorting results based on popularity, relevancy, publish date, or none
-5. Retrieve news data from [NewsAPI](https://newsapi.org/docs)
+## Bonus Features
+You can choose to implement 1-2 features from this that you like:
+
+1. Use relative time for the article's published times, e.g. 3 min ago, Yesterday 2 PM.
+   - Choose appropriate relative-time boundaries and keep values current while the page remains open.
+2. Give an option to the user to mark a news source as favourite.
+   - If a favourite news source appears in search list, it should show before the news from other sources
+3. If user has visited the main article for a news item from the "Read more" link, it should show "Visited" tag for such news items
+
+Make sure you implement all the features in the main problem statement. Prioritize the work and document any items you
+were not able to complete, along with the UX and architecture decisions you made.
 
 ## Parameters
 
 - Build, organize, and commit your code (via git) as if you are working on a production project
-- Login credentials or user management is not a requirement of this assessment
+- Login credentials or user management is not a requirement of this assessment. There is no backend or DB service needed to implement the assessment. For any kind of information persistance, you can use the browser to store it.
 - You may leverage any boilerplate or starter app code to help bootstrap your project
 - Modern React is expected
 
